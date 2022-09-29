@@ -24,7 +24,7 @@ export const StateContext = ({ children }) => {
   };
 
   const decQty = () => {
-    setQty(() => {
+    setQty((prevQty) => {
       if (prevQty - 1 < 1) return 1;
 
       return prevQty - 1;
@@ -78,7 +78,7 @@ export const StateContext = ({ children }) => {
     setCartItems(newCartItems);
   }
 
-  const toggleCarItemQuantity = (id, value) => {
+  const toggleCartItemQuanitity = (id, value) => {
     foundProduct = cartItems.find((item) => item._id === id);
     index = cartItems.findIndex((product) => product._id === id);
     const newCartItems = cartItems.filter((item) => item._id !== id);
@@ -114,8 +114,11 @@ export const StateContext = ({ children }) => {
         incQty,
         decQty,
         onAdd,
-        toggleCarItemQuantity,
-        onRemove
+        toggleCartItemQuanitity,
+        onRemove,
+        setCartItems,
+        setTotalPrice,
+        setTotalQuantities
       }}>
       {children}
     </Context.Provider>
