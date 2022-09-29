@@ -11,7 +11,7 @@ const NavBar = () => {
     <div className="navbar-container">
       <p className="logo">
         <Link href="/">
-        JA10TH WristWatches
+        JA10TH STORE
         </Link>
       </p>
 
